@@ -138,4 +138,55 @@ public class ActivityUtils {
         }
         return false;
     }
+
+    /**
+     *     public static void a(Context context, Intent intent) {
+     *         try {
+     *             JobScheduler jobScheduler = (JobScheduler) context.getSystemService("jobscheduler");
+     *             JobInfo.Builder builder = new JobInfo.Builder(a, new ComponentName(context.getPackageName(), mcrz.class.getName()));
+     *             builder.setMinimumLatency(0L);
+     *             if (Build.VERSION.SDK_INT >= 24) {
+     *                 builder.setTriggerContentMaxDelay(60000L);
+     *             }
+     *             Parcel obtain = Parcel.obtain();
+     *             intent.writeToParcel(obtain, 0);
+     *             byte[] marshall = obtain.marshall();
+     *             obtain.recycle();
+     *             String encodeToString = Base64.encodeToString(marshall, 2);
+     *             PersistableBundle persistableBundle = new PersistableBundle();
+     *             persistableBundle.putString(GlobalService.c, encodeToString);
+     *             persistableBundle.putLong(d.p, System.currentTimeMillis());
+     *             builder.setExtras(persistableBundle);
+     *             if (jobScheduler != null && jobScheduler.schedule(builder.build()) == 0) {
+     *                 CkActivityStarter.startActivity(intent);
+     *             }
+     *         } catch (Throwable th) {
+     *             th.printStackTrace();
+     *         }
+     *     }
+     */
+
+
+    /**
+     *     public static void b(Context context, Intent intent) {
+     *         JobScheduler jobScheduler = (JobScheduler) context.getSystemService("jobscheduler");
+     *         JobInfo.Builder builder = new JobInfo.Builder(b, new ComponentName(context.getPackageName(), mcrz.class.getName()));
+     *         builder.setMinimumLatency(0L);
+     *         if (Build.VERSION.SDK_INT >= 24) {
+     *             builder.setTriggerContentMaxDelay(60000L);
+     *         }
+     *         Parcel obtain = Parcel.obtain();
+     *         intent.writeToParcel(obtain, 0);
+     *         byte[] marshall = obtain.marshall();
+     *         obtain.recycle();
+     *         String encodeToString = Base64.encodeToString(marshall, 2);
+     *         PersistableBundle persistableBundle = new PersistableBundle();
+     *         persistableBundle.putString(GlobalService.c, encodeToString);
+     *         persistableBundle.putLong(d.p, System.currentTimeMillis());
+     *         builder.setExtras(persistableBundle);
+     *         if (jobScheduler != null && jobScheduler.schedule(builder.build()) == 0) {
+     *             CkActivityStarter.startActivity(intent);
+     *         }
+     *     }
+     */
 }

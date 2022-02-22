@@ -246,3 +246,4 @@ Java_com_daemon_process_NativeLoader_doDaemon(JNIEnv *env, jobject jobj,
     do_daemon(env, jobj, indicator_self_path, indicator_daemon_path, observer_self_path,
               observer_daemon_path);
 }
+
