@@ -238,6 +238,20 @@
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE"></service>
 
+
+
+        <service
+            android:name="com.daemon.AssistService1"
+            android:exported="true"
+            android:process=":assist1" />
+
+        <service
+            android:name="com.daemon.AssistService2"
+            android:exported="true"
+            android:process=":assist2" />
+
+
+
         <receiver android:name="com.daemon.receiver.DaemonStaticReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -277,6 +291,31 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </application>
 </manifest>

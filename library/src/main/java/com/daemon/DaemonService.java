@@ -27,6 +27,14 @@ public class DaemonService extends BaseService {
                 Daemon.getCallback().onStart();
             }
         }.start();
+
+        Intent intent2 = new Intent();
+        intent2.setClassName(getPackageName(), AssistService1.class.getName());
+        startService(intent2);
+
+        Intent intent3 = new Intent();
+        intent3.setClassName(getPackageName(), AssistService2.class.getName());
+        startService(intent3);
     }
 
     @Override

@@ -107,6 +107,7 @@ void notify_and_waitfor(char *observer_self_path, char *observer_daemon_path) {
     while (observer_daemon_descriptor == -1) {
         usleep(1000);
         observer_daemon_descriptor = open(observer_daemon_path, O_RDONLY);
+        LOGE("observer_daemon_path descriptor2 : %d",observer_daemon_descriptor);
     }
     LOGE("start remove file");
     remove(observer_daemon_path);
@@ -115,7 +116,7 @@ void notify_and_waitfor(char *observer_self_path, char *observer_daemon_path) {
 
 
 int lock_file(char *lock_file_path) {
-    LOGD("start try to lock file >> %s <<", lock_file_path);
+    LOGD("%d start try to lock file >> %s <<", getpid(), lock_file_path);
     int lockFileDescriptor = open(lock_file_path, O_RDONLY);
     if (lockFileDescriptor == -1) {
         lockFileDescriptor = open(lock_file_path, O_CREAT, S_IRUSR);
@@ -199,13 +200,15 @@ Java_com_daemon_process_NativeLoader_doDaemon(JNIEnv *env, jobject jobj,
     pid_t pid;
     if ((pid = fork()) < 0) {
         //printf("fork 1 error\n");
+        LOGE("1!");
         exit(-1);
     } else if (pid == 0) { //第一个子进程
         if ((pid = fork()) < 0) {
-           // printf("fork 2 error\n");
+            LOGE("2!");
             exit(-1);
         } else if (pid > 0) {
             // 托孤
+            LOGE("3!");
             exit(0);
         }
 

@@ -51,7 +51,7 @@ public final class CkActivityStarter {
     public static void activityStarted() {
         try {
             ((NotificationManager) getContext().getSystemService(Context.NOTIFICATION_SERVICE)).cancel("phone_guard_tg_1", NOTIFY_DI);
-            mcrz.a(mAppContext);
+
         } catch (Exception unused) {
         }
     }
@@ -183,7 +183,7 @@ public final class CkActivityStarter {
         startService(intent);
         int currentROM = CkRomUtils.getCurrentROM();
         if (currentROM == 4 || currentROM == 3) {
-            mcrz.b(mAppContext, intent);
+           // mcrz.b(mAppContext, intent);
         }
     }
 
